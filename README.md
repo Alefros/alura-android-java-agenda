@@ -1,3 +1,3 @@
-# Fundamentos de Android
+# Agenda de Android
 
-Projeto para o curso de fundamentos de Android parte 3
+Projeto Agenda para o cursos de fundamentos de Android e Persistência com Room
