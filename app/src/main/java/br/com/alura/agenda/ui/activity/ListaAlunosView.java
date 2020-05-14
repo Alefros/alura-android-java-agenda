@@ -2,24 +2,27 @@ package br.com.alura.agenda.ui.activity;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import androidx.appcompat.app.AlertDialog;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import br.com.alura.agenda.dao.AlunoDAO;
+import androidx.appcompat.app.AlertDialog;
+
+import br.com.alura.agenda.database.AgendaDatabase;
+import br.com.alura.agenda.database.RoomAlunoDAO;
 import br.com.alura.agenda.model.Aluno;
 import br.com.alura.agenda.ui.adapter.ListaAlunosAdapter;
 
 public class ListaAlunosView {
 
     private ListaAlunosAdapter adapter;
-    private AlunoDAO dao;
+    private RoomAlunoDAO dao;
     private final Context context;
 
     public ListaAlunosView(Context context) {
         this.context = context;
-        this.dao = new AlunoDAO();
+        dao = AgendaDatabase.getInstance(context)
+                .getRoomAlunoDAO();
     }
 
     public void confirmaRemocao(final MenuItem item) {
